@@ -1,0 +1,32 @@
+<%
+const optionsCustomer = customers.map((item) => `<option value="${item.id}" ${String(values.customerId) === String(item.id) ? 'selected' : ''}>${item.name}${item.phone ? ` (${item.phone})` : ''}</option>`).join('');
+const optionsService = services.map((item) => `<option value="${item.id}" ${String(values.serviceId) === String(item.id) ? 'selected' : ''}>${item.name} • Rp ${Number(item.price || 0).toLocaleString('id-ID')} / ${item.unit}</option>`).join('');
+const statusOptions = statuses.map((item) => `<option value="${item}" ${values.status === item ? 'selected' : ''}>${item}</option>`).join('');
+const paymentOptions = paymentStatuses.map((item) => `<option value="${item}" ${values.paymentStatus === item ? 'selected' : ''}>${item}</option>`).join('');
+const title = mode === 'edit' ? 'Edit Order' : 'Order Baru';
+const body = `
+<section class="hero">
+  <div><h2>${title}</h2><p>${mode === 'edit' ? 'Perbarui data order laundry.' : 'Pilih pelanggan dan layanan, lalu simpan order.'}</p></div>
+  <div class="actions"><a href="/orders" class="btn btn-secondary">Kembali</a></div>
+</section>
+<section class="panel">
+  ${error ? `<div class="error-box">${error}</div>` : ''}
+  <form method="post" action="${formAction}" class="form-grid">
+    <div class="grid-2">
+      <label><span>Pelanggan</span><select name="customerId" required><option value="">Pilih pelanggan</option>${optionsCustomer}</select></label>
+      <label><span>Layanan</span><select name="serviceId" required><option value="">Pilih layanan</option>${optionsService}</select></label>
+    </div>
+    <div class="grid-2">
+      <label><span>Qty / berat</span><input type="number" step="0.1" min="0.1" name="quantity" value="${values.quantity || ''}" required /></label>
+      <label><span>Status pembayaran</span><select name="paymentStatus">${paymentOptions}</select></label>
+    </div>
+    <div class="grid-2">
+      <label><span>Status order</span><select name="status">${statusOptions}</select></label>
+      <label><span>Estimasi selesai</span><input type="datetime-local" name="estimatedReadyAt" value="${values.estimatedReadyAt || ''}" /></label>
+    </div>
+    <label><span>Catatan</span><textarea name="notes">${values.notes || ''}</textarea></label>
+    <div class="actions"><button type="submit" class="btn btn-primary">${mode === 'edit' ? 'Simpan perubahan' : 'Simpan & lihat nota'}</button>${order ? `<a href="/orders/${order.id}/receipt" class="btn btn-secondary">Lihat nota</a>` : ''}</div>
+  </form>
+</section>
+`;
+%><%- include('layout', { pageTitle: title, body }) %>

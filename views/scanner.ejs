@@ -1,0 +1,67 @@
+<%
+const body = `
+<section class="scanner-shell">
+  <article class="panel scanner-panel">
+    <div class="hero">
+      <div>
+        <h2>Scanner Staff</h2>
+        <p>Scan QR pada nota laundry untuk membuka halaman update status.</p>
+      </div>
+      <div class="actions"><a href="/login" class="btn btn-secondary">Login admin</a></div>
+    </div>
+    <div id="reader" class="scanner-reader"></div>
+    <div id="scanner-status" class="muted">Arahkan kamera ke QR code pada nota.</div>
+    <div class="actions mt-16"><button id="start-scanner" class="btn btn-primary" type="button">Aktifkan kamera</button></div>
+  </article>
+
+  <article class="panel scanner-panel mt-16">
+    <h3>Fallback Manual</h3>
+    <p class="muted">Kalau kamera bermasalah, staff bisa input kode invoice atau token scan secara manual.</p>
+    ${typeof error !== 'undefined' && error ? `<div class="error-box">${error}</div>` : ''}
+    <form method="post" action="/scanner/manual" class="form-grid">
+      <label>
+        <span>Kode invoice / token scan</span>
+        <input type="text" name="query" value="${typeof manualValue !== 'undefined' ? manualValue : ''}" placeholder="Contoh: LZ-20260405-0014 atau d3844c9cba00a4b28a9c59a1" />
+      </label>
+      <div class="actions"><button type="submit" class="btn btn-secondary">Buka order</button></div>
+    </form>
+  </article>
+</section>
+<script src="https://unpkg.com/html5-qrcode" defer></script>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  const statusEl = document.getElementById('scanner-status');
+  const startBtn = document.getElementById('start-scanner');
+  let scanner;
+
+  function handleScan(decodedText) {
+    statusEl.textContent = 'QR terdeteksi, membuka order...';
+    try {
+      const url = new URL(decodedText, window.location.origin);
+      window.location.href = url.pathname + url.search;
+    } catch (err) {
+      statusEl.textContent = 'QR tidak valid untuk sistem laundry ini.';
+    }
+  }
+
+  startBtn.addEventListener('click', async function () {
+    startBtn.disabled = true;
+    statusEl.textContent = 'Meminta akses kamera...';
+    try {
+      scanner = new Html5Qrcode('reader');
+      await scanner.start(
+        { facingMode: 'environment' },
+        { fps: 10, qrbox: { width: 220, height: 220 } },
+        handleScan,
+        function () {}
+      );
+      statusEl.textContent = 'Scanner aktif. Arahkan ke QR code nota.';
+    } catch (error) {
+      statusEl.textContent = 'Gagal membuka kamera. Cek izin kamera di browser.';
+      startBtn.disabled = false;
+    }
+  });
+});
+</script>
+`;
+%><%- include('layout', { pageTitle: 'Scanner Staff', body, scannerMode: true }) %>

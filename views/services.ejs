@@ -1,0 +1,35 @@
+<%
+const body = `
+<section class="hero">
+  <div><h2>Layanan</h2><p>Kelola layanan dan harga laundry.</p></div>
+  <div class="actions"><a href="/services/new" class="btn btn-primary">Tambah layanan</a></div>
+</section>
+<section class="panel">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Nama</th><th>Kategori</th><th>Satuan</th><th>Harga</th><th>Estimasi</th><th>Status</th><th>Aksi</th></tr></thead>
+      <tbody>
+        ${services.length ? services.map((item) => `
+          <tr>
+            <td>${item.name}</td>
+            <td><span class="badge info">${item.category}</span></td>
+            <td>${item.unit}</td>
+            <td>Rp ${Number(item.price || 0).toLocaleString('id-ID')}</td>
+            <td>${item.durationHours} jam</td>
+            <td><span class="badge ${item.active ? 'success' : ''}">${item.active ? 'aktif' : 'nonaktif'}</span></td>
+            <td>
+              <div class="actions">
+                <a href="/services/${item.id}/edit" class="btn btn-secondary">Edit</a>
+                <form method="post" action="/services/${item.id}/delete" onsubmit="return confirm('Hapus layanan ini?')">
+                  <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+        `).join('') : '<tr><td colspan="7" class="muted">Belum ada layanan.</td></tr>'}
+      </tbody>
+    </table>
+  </div>
+</section>
+`;
+%><%- include('layout', { pageTitle: 'Layanan', body }) %>

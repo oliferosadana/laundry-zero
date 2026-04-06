@@ -1,0 +1,54 @@
+<%
+const escape = (value) => String(value || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const statusOptions = statuses.map((status) => `<option value="${status}" ${filters?.status === status ? 'selected' : ''}>${status}</option>`).join('');
+const paymentOptions = paymentStatuses.map((status) => `<option value="${status}" ${filters?.paymentStatus === status ? 'selected' : ''}>${status}</option>`).join('');
+const body = `
+<section class="hero">
+  <div><h2>Order</h2><p>Kelola semua transaksi laundry.</p></div>
+  <div class="actions"><a href="/orders/new" class="btn btn-primary">Buat order</a></div>
+</section>
+<section class="panel">
+  <form method="get" action="/orders" class="toolbar toolbar-4">
+    <input type="search" name="q" value="${escape(filters?.q)}" placeholder="Cari invoice, pelanggan, layanan..." />
+    <select name="status"><option value="">Semua status</option>${statusOptions}</select>
+    <select name="paymentStatus"><option value="">Semua pembayaran</option>${paymentOptions}</select>
+    <div class="actions"><button type="submit" class="btn btn-secondary">Filter</button><a href="/orders" class="btn btn-secondary">Reset</a></div>
+  </form>
+</section>
+<section class="panel">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Invoice</th><th>Pelanggan</th><th>Layanan</th><th>Status</th><th>Bayar</th><th>Total</th><th>Aksi</th></tr></thead>
+      <tbody>
+        ${orders.length ? orders.map((order) => `
+          <tr>
+            <td>${order.invoiceNumber}</td>
+            <td>${order.customerName}</td>
+            <td>${order.items?.[0]?.serviceName || '-'}</td>
+            <td>
+              <form method="post" action="/orders/${order.id}/status" class="inline-status-form">
+                <select name="status" onchange="this.form.submit()">
+                  ${statuses.map((status) => `<option value="${status}" ${order.status === status ? 'selected' : ''}>${status}</option>`).join('')}
+                </select>
+              </form>
+            </td>
+            <td>${order.paymentStatus}</td>
+            <td>Rp ${Number(order.totalAmount || 0).toLocaleString('id-ID')}</td>
+            <td>
+              <div class="actions">
+                <a href="/orders/${order.id}" class="btn btn-secondary">Detail</a>
+                <a href="/orders/${order.id}/edit" class="btn btn-secondary">Edit</a>
+                <a href="/orders/${order.id}/receipt" class="btn btn-secondary">Nota</a>
+                <form method="post" action="/orders/${order.id}/delete" onsubmit="return confirm('Hapus order ini?')">
+                  <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+        `).join('') : '<tr><td colspan="7" class="muted">Belum ada order yang cocok.</td></tr>'}
+      </tbody>
+    </table>
+  </div>
+</section>
+`;
+%><%- include('layout', { pageTitle: 'Order', body }) %>

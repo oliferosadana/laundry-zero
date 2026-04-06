@@ -1,0 +1,47 @@
+<%
+const escape = (value) => String(value || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const body = `
+<section class="hero">
+  <div><h2>Pengeluaran</h2><p>Catat biaya operasional dan pantau total pengeluaran.</p></div>
+  <div class="actions"><a href="/expenses/new" class="btn btn-primary">Tambah pengeluaran</a></div>
+</section>
+<section class="panel">
+  <form method="get" action="/expenses" class="toolbar toolbar-4">
+    <input type="search" name="q" value="${escape(filters?.q)}" placeholder="Cari nama, kategori, catatan..." />
+    <input type="date" name="start" value="${escape(filters?.start)}" />
+    <input type="date" name="end" value="${escape(filters?.end)}" />
+    <div class="actions"><button type="submit" class="btn btn-secondary">Filter</button><a href="/expenses" class="btn btn-secondary">Reset</a></div>
+  </form>
+</section>
+<section class="stats stats-2">
+  <article class="card"><h3>Jumlah item</h3><p>${expenses.length}</p></article>
+  <article class="card"><h3>Total pengeluaran</h3><p>Rp ${Number(totalAmount || 0).toLocaleString('id-ID')}</p></article>
+</section>
+<section class="panel">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tanggal</th><th>Nama</th><th>Kategori</th><th>Nominal</th><th>Catatan</th><th>Aksi</th></tr></thead>
+      <tbody>
+        ${expenses.length ? expenses.map((item) => `
+          <tr>
+            <td>${dayjs(item.spentAt).format('DD/MM/YYYY HH:mm')}</td>
+            <td>${item.title}</td>
+            <td><span class="badge info">${item.category}</span></td>
+            <td>Rp ${Number(item.amount || 0).toLocaleString('id-ID')}</td>
+            <td>${item.notes || '-'}</td>
+            <td>
+              <div class="actions">
+                <a href="/expenses/${item.id}/edit" class="btn btn-secondary">Edit</a>
+                <form method="post" action="/expenses/${item.id}/delete" onsubmit="return confirm('Hapus pengeluaran ini?')">
+                  <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+        `).join('') : '<tr><td colspan="6" class="muted">Belum ada pengeluaran yang cocok.</td></tr>'}
+      </tbody>
+    </table>
+  </div>
+</section>
+`;
+%><%- include('layout', { pageTitle: 'Pengeluaran', body }) %>

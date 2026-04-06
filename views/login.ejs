@@ -1,0 +1,18 @@
+<%
+const body = `
+<section class="login-shell">
+  <article class="panel login-card">
+    <h2>Login Admin</h2>
+    <p class="muted">Masuk untuk mengelola order, pelanggan, layanan, dan laporan laundry.</p>
+    ${error ? `<div class="error-box">${error}</div>` : ''}
+    <form method="post" action="/login" class="form-grid">
+      <label>
+        <span>Password admin</span>
+        <input type="password" name="password" placeholder="Masukkan password" required />
+      </label>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </article>
+</section>
+`;
+%><%- include('layout', { pageTitle: 'Login', body }) %>

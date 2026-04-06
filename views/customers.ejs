@@ -1,0 +1,41 @@
+<%
+const escape = (value) => String(value || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const body = `
+<section class="hero">
+  <div><h2>Pelanggan</h2><p>Kelola data pelanggan laundry.</p></div>
+  <div class="actions"><a href="/customers/new" class="btn btn-primary">Tambah pelanggan</a></div>
+</section>
+<section class="panel">
+  <form method="get" action="/customers" class="toolbar">
+    <input type="search" name="q" value="${escape(filters?.q)}" placeholder="Cari nama, nomor HP, alamat..." />
+    <button type="submit" class="btn btn-secondary">Cari</button>
+    <a href="/customers" class="btn btn-secondary">Reset</a>
+  </form>
+</section>
+<section class="panel">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Nama</th><th>No. HP</th><th>Alamat</th><th>Catatan</th><th>Aksi</th></tr></thead>
+      <tbody>
+        ${customers.length ? customers.map((item) => `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.phone || '-'}</td>
+            <td>${item.address || '-'}</td>
+            <td>${item.notes || '-'}</td>
+            <td>
+              <div class="actions">
+                <a href="/customers/${item.id}/edit" class="btn btn-secondary">Edit</a>
+                <form method="post" action="/customers/${item.id}/delete" onsubmit="return confirm('Hapus pelanggan ini?')">
+                  <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+        `).join('') : '<tr><td colspan="5" class="muted">Belum ada pelanggan yang cocok.</td></tr>'}
+      </tbody>
+    </table>
+  </div>
+</section>
+`;
+%><%- include('layout', { pageTitle: 'Pelanggan', body }) %>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= pageTitle ? `${pageTitle} • ${appName}` : appName %></title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <% if (typeof scannerMode !== 'undefined' && scannerMode) { %>
+    <main class="scanner-layout"><%- body %></main>
+  <% } else if (isAdmin) { %>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <h1><%= settings.storeName || appName %></h1>
+          <p><%= appName %></p>
+        </div>
+        <nav class="nav">
+          <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Dashboard</a>
+          <a href="/orders" class="<%= currentPath.startsWith('/orders') ? 'active' : '' %>">Order</a>
+          <a href="/customers" class="<%= currentPath.startsWith('/customers') ? 'active' : '' %>">Pelanggan</a>
+          <a href="/services" class="<%= currentPath.startsWith('/services') ? 'active' : '' %>">Layanan</a>
+          <a href="/scanner" class="<%= currentPath.startsWith('/scanner') || currentPath.startsWith('/scan/') ? 'active' : '' %>">Scanner Staff</a>
+          <a href="/expenses" class="<%= currentPath.startsWith('/expenses') ? 'active' : '' %>">Pengeluaran</a>
+          <a href="/reports" class="<%= currentPath.startsWith('/reports') ? 'active' : '' %>">Laporan</a>
+        </nav>
+      </aside>
+      <main class="content"><%- body %></main>
+    </div>
+  <% } else { %>
+    <main><%- body %></main>
+  <% } %>
+</body>
+</html>

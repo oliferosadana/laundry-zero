@@ -1,0 +1,85 @@
+<%
+const itemRows = (order.items || []).map((item) => {
+  const qty = `${item.quantity} ${item.unit}`.trim();
+  return `
+    <div class="thermal-item-row">
+      <div>
+        <div class="thermal-item-name">${item.serviceName}</div>
+        <div class="thermal-item-meta">${qty} × Rp ${Number(item.unitPrice || 0).toLocaleString('id-ID')}</div>
+      </div>
+      <div class="thermal-item-price">Rp ${Number(item.subtotal || 0).toLocaleString('id-ID')}</div>
+    </div>
+  `;
+}).join('');
+const body = `
+<section class="hero no-print">
+  <div><h2>Nota Laundry</h2><p>${order.invoiceNumber}</p></div>
+  <div class="actions"><a href="/orders" class="btn btn-secondary">Kembali</a><button onclick="window.print()" class="btn btn-primary">Cetak</button></div>
+</section>
+<section class="thermal-receipt-wrap">
+  <article class="panel receipt thermal-receipt">
+    <header class="thermal-header text-center">
+      <h2>${settings.storeName || appName}</h2>
+      <p>${settings.address || '-'}<br/>${settings.phone || '-'}</p>
+      <div class="thermal-divider"></div>
+      <p class="thermal-invoice"><strong>${order.invoiceNumber}</strong></p>
+    </header>
+
+    <section class="thermal-meta">
+      <div class="thermal-meta-row"><span>Tanggal</span><span>${dayjs(order.createdAt).format('DD/MM/YYYY HH:mm')}</span></div>
+      <div class="thermal-meta-row"><span>Pelanggan</span><span>${order.customerName}</span></div>
+      <div class="thermal-meta-row"><span>No HP</span><span>${order.customerPhone || '-'}</span></div>
+      <div class="thermal-meta-row"><span>Status</span><span>${order.status}</span></div>
+      <div class="thermal-meta-row"><span>Bayar</span><span>${order.paymentStatus}</span></div>
+      <div class="thermal-meta-row"><span>Estimasi</span><span>${order.estimatedReadyAt ? dayjs(order.estimatedReadyAt).format('DD/MM HH:mm') : '-'}</span></div>
+    </section>
+
+    <div class="thermal-divider"></div>
+
+    <section class="thermal-items">
+      ${itemRows}
+    </section>
+
+    <div class="thermal-divider"></div>
+
+    <section class="thermal-total-block">
+      <div class="thermal-meta-row total-row"><span>Total</span><span>Rp ${Number(order.totalAmount || 0).toLocaleString('id-ID')}</span></div>
+    </section>
+
+    ${order.notes ? `
+      <div class="thermal-divider"></div>
+      <section class="thermal-notes">
+        <strong>Catatan</strong>
+        <p>${order.notes}</p>
+      </section>
+    ` : ''}
+
+    <div class="thermal-divider"></div>
+
+    <section class="thermal-qr-section">
+      <p class="muted text-center">Scan QR ini untuk update status oleh staff</p>
+      <div class="thermal-qr-box">
+        <img src="${qrImageUrl}" alt="QR order ${order.invoiceNumber}" />
+      </div>
+      <p class="thermal-scan-url">${scanUrl}</p>
+    </section>
+
+    <footer class="thermal-footer text-center">
+      <div class="thermal-divider"></div>
+      <p>${settings.receiptFooter || ''}</p>
+    </footer>
+  </article>
+
+  <section class="panel-soft qr-section mt-16 no-print">
+    <div>
+      <h3>QR Staff Scanner</h3>
+      <p class="muted">Printer thermal 80mm akan memakai layout ringkas. Bagian ini hanya untuk tampilan layar/admin.</p>
+      <div class="actions"><a href="/scanner" class="btn btn-secondary">Buka halaman scanner</a><a href="${scanUrl}" class="btn btn-secondary">Buka link scan order</a></div>
+    </div>
+    <div class="qr-box">
+      <img src="${qrImageUrl}" alt="QR order ${order.invoiceNumber}" />
+    </div>
+  </section>
+</section>
+`;
+%><%- include('layout', { pageTitle: 'Nota', body }) %>

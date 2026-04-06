@@ -1,0 +1,70 @@
+<%
+const escape = (value) => String(value || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const statusOptions = statuses.map((status) => `<option value="${status}" ${filters?.status === status ? 'selected' : ''}>${status}</option>`).join('');
+const paymentOptions = paymentStatuses.map((status) => `<option value="${status}" ${filters?.paymentStatus === status ? 'selected' : ''}>${status}</option>`).join('');
+const exportQuery = new URLSearchParams({ q: filters?.q || '', status: filters?.status || '', paymentStatus: filters?.paymentStatus || '', start: filters?.start || '', end: filters?.end || '' }).toString();
+const body = `
+<section class="hero">
+  <div><h2>Laporan</h2><p>Ringkasan omzet, pengeluaran, dan laba bersih.</p></div>
+  <div class="actions"><a href="/reports/export.csv?${exportQuery}" class="btn btn-primary">Export CSV order</a></div>
+</section>
+<section class="panel">
+  <form method="get" action="/reports" class="toolbar toolbar-5">
+    <input type="search" name="q" value="${escape(filters?.q)}" placeholder="Cari invoice, pelanggan, layanan..." />
+    <select name="status"><option value="">Semua status</option>${statusOptions}</select>
+    <select name="paymentStatus"><option value="">Semua pembayaran</option>${paymentOptions}</select>
+    <input type="date" name="start" value="${escape(filters?.start)}" />
+    <input type="date" name="end" value="${escape(filters?.end)}" />
+    <div class="actions"><button type="submit" class="btn btn-secondary">Terapkan</button><a href="/reports" class="btn btn-secondary">Reset</a></div>
+  </form>
+</section>
+<section class="stats stats-6">
+  <article class="card"><h3>Total order</h3><p>${summary.totalOrders}</p></article>
+  <article class="card"><h3>Total omzet</h3><p>Rp ${Number(summary.totalRevenue || 0).toLocaleString('id-ID')}</p></article>
+  <article class="card"><h3>Omzet lunas</h3><p>Rp ${Number(summary.paidRevenue || 0).toLocaleString('id-ID')}</p></article>
+  <article class="card"><h3>Belum lunas</h3><p>${summary.unpaidOrders}</p></article>
+  <article class="card"><h3>Total pengeluaran</h3><p>Rp ${Number(summary.totalExpenses || 0).toLocaleString('id-ID')}</p></article>
+  <article class="card ${summary.netProfit >= 0 ? 'profit-card' : 'loss-card'}"><h3>Laba bersih</h3><p>Rp ${Number(summary.netProfit || 0).toLocaleString('id-ID')}</p></article>
+</section>
+<section class="panel">
+  <div class="hero"><div><h2>Transaksi order</h2><p>Semua transaksi yang masuk pada periode terpilih.</p></div></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tanggal</th><th>Invoice</th><th>Pelanggan</th><th>Layanan</th><th>Status</th><th>Pembayaran</th><th>Total</th></tr></thead>
+      <tbody>
+        ${orders.length ? orders.map((order) => `
+          <tr>
+            <td>${dayjs(order.createdAt).format('DD/MM/YYYY HH:mm')}</td>
+            <td><a href="/orders/${order.id}">${order.invoiceNumber}</a></td>
+            <td>${order.customerName}</td>
+            <td>${order.items?.[0]?.serviceName || '-'}</td>
+            <td>${order.status}</td>
+            <td>${order.paymentStatus}</td>
+            <td>Rp ${Number(order.totalAmount || 0).toLocaleString('id-ID')}</td>
+          </tr>
+        `).join('') : '<tr><td colspan="7" class="muted">Tidak ada transaksi pada filter ini.</td></tr>'}
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="panel">
+  <div class="hero"><div><h2>Pengeluaran operasional</h2><p>Biaya yang masuk ke perhitungan laba bersih periode ini.</p></div><div class="actions"><a href="/expenses" class="btn btn-secondary">Kelola pengeluaran</a></div></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tanggal</th><th>Nama</th><th>Kategori</th><th>Nominal</th><th>Catatan</th></tr></thead>
+      <tbody>
+        ${expenses.length ? expenses.map((item) => `
+          <tr>
+            <td>${dayjs(item.spentAt).format('DD/MM/YYYY HH:mm')}</td>
+            <td>${item.title}</td>
+            <td>${item.category}</td>
+            <td>Rp ${Number(item.amount || 0).toLocaleString('id-ID')}</td>
+            <td>${item.notes || '-'}</td>
+          </tr>
+        `).join('') : '<tr><td colspan="5" class="muted">Tidak ada pengeluaran pada periode ini.</td></tr>'}
+      </tbody>
+    </table>
+  </div>
+</section>
+`;
+%><%- include('layout', { pageTitle: 'Laporan', body }) %>

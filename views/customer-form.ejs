@@ -1,0 +1,21 @@
+<%
+const title = mode === 'edit' ? 'Edit Pelanggan' : 'Tambah Pelanggan';
+const body = `
+<section class="hero">
+  <div><h2>${title}</h2><p>Simpan data pelanggan agar order lebih rapi.</p></div>
+  <div class="actions"><a href="/customers" class="btn btn-secondary">Kembali</a></div>
+</section>
+<section class="panel">
+  ${error ? `<div class="error-box">${error}</div>` : ''}
+  <form method="post" action="${formAction}" class="form-grid">
+    <div class="grid-2">
+      <label><span>Nama pelanggan</span><input type="text" name="name" value="${values.name || ''}" required /></label>
+      <label><span>No. HP</span><input type="text" name="phone" value="${values.phone || ''}" /></label>
+    </div>
+    <label><span>Alamat</span><textarea name="address">${values.address || ''}</textarea></label>
+    <label><span>Catatan</span><textarea name="notes">${values.notes || ''}</textarea></label>
+    <div class="actions"><button type="submit" class="btn btn-primary">${mode === 'edit' ? 'Simpan perubahan' : 'Simpan pelanggan'}</button></div>
+  </form>
+</section>
+`;
+%><%- include('layout', { pageTitle: title, body }) %>

@@ -1,0 +1,46 @@
+<%
+const item = order.items?.[0] || {};
+const body = `
+<section class="scanner-shell">
+  <article class="panel scanner-panel">
+    <div class="hero">
+      <div>
+        <h2>Update Status Laundry</h2>
+        <p>${order.invoiceNumber} • ${order.customerName}</p>
+      </div>
+      <div class="actions"><a href="/scanner" class="btn btn-secondary">Scan lagi</a></div>
+    </div>
+    ${success ? `<div class="success-box">${success}</div>` : ''}
+    <div class="detail-grid scanner-order-grid">
+      <article class="card compact-card">
+        <h3>Pelanggan</h3>
+        <p><strong>${order.customerName}</strong></p>
+        <p class="muted">${order.customerPhone || '-'}</p>
+      </article>
+      <article class="card compact-card">
+        <h3>Layanan</h3>
+        <p><strong>${item.serviceName || '-'}</strong></p>
+        <p class="muted">${item.quantity || '-'} ${item.unit || ''}</p>
+      </article>
+      <article class="card compact-card">
+        <h3>Status sekarang</h3>
+        <p><span class="badge info">${order.status}</span></p>
+        <p class="muted">Bayar: ${order.paymentStatus}</p>
+      </article>
+    </div>
+    <section class="panel-soft quick-status-grid">
+      ${statuses.map((status) => `
+        <form method="post" action="/scan/${order.scanToken}/status">
+          <input type="hidden" name="status" value="${status}" />
+          <button type="submit" class="btn ${order.status === status ? 'btn-secondary' : 'btn-primary'}">Ubah ke ${status}</button>
+        </form>
+      `).join('')}
+    </section>
+    <section class="scan-info mt-16">
+      <p class="muted">QR ini khusus untuk order ini. Simpan link scanner jika staff ingin scan order lain:</p>
+      <div class="actions"><a href="${scanUrl}" class="btn btn-secondary">Buka link order scan</a><a href="/orders/${order.id}/receipt" class="btn btn-secondary">Lihat nota admin</a></div>
+    </section>
+  </article>
+</section>
+`;
+%><%- include('layout', { pageTitle: 'Update Status QR', body, scannerMode: true }) %>

@@ -1,0 +1,33 @@
+<%
+const title = mode === 'edit' ? 'Edit Layanan' : 'Tambah Layanan';
+const body = `
+<section class="hero">
+  <div><h2>${title}</h2><p>Kelola layanan dan harga laundry.</p></div>
+  <div class="actions"><a href="/services" class="btn btn-secondary">Kembali</a></div>
+</section>
+<section class="panel">
+  ${error ? `<div class="error-box">${error}</div>` : ''}
+  <form method="post" action="${formAction}" class="form-grid">
+    <div class="grid-2">
+      <label><span>Nama layanan</span><input type="text" name="name" value="${values.name || ''}" required /></label>
+      <label>
+        <span>Kategori</span>
+        <select name="category">
+          <option value="kiloan" ${values.category === 'kiloan' ? 'selected' : ''}>Kiloan</option>
+          <option value="satuan" ${values.category === 'satuan' ? 'selected' : ''}>Satuan</option>
+        </select>
+      </label>
+    </div>
+    <div class="grid-2">
+      <label><span>Satuan</span><input type="text" name="unit" value="${values.unit || ''}" required /></label>
+      <label><span>Harga</span><input type="number" min="0" step="100" name="price" value="${values.price || 0}" required /></label>
+    </div>
+    <div class="grid-2">
+      <label><span>Estimasi selesai (jam)</span><input type="number" min="1" name="durationHours" value="${values.durationHours || 24}" required /></label>
+      <label class="checkbox-row"><input type="checkbox" name="active" ${values.active ? 'checked' : ''} /> <span>Aktif</span></label>
+    </div>
+    <div class="actions"><button type="submit" class="btn btn-primary">${mode === 'edit' ? 'Simpan perubahan' : 'Simpan layanan'}</button></div>
+  </form>
+</section>
+`;
+%><%- include('layout', { pageTitle: title, body }) %>
