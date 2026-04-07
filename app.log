@@ -1365,3 +1365,577 @@ GoWA notifier: enabled
 [0mGET /.env.qa [33m404[0m 0.159 ms - 146[0m
 [0mGET /admin/config.php [33m404[0m 0.137 ms - 155[0m
 [0mGET /_ignition/execute-solution [33m404[0m 0.134 ms - 165[0m
+Laundry Zero ready at http://127.0.0.1:3220
+Telegram notifier: enabled
+GoWA notifier: enabled
+[0mGET /health [32m200[0m 2.392 ms - 74[0m
+[0mGET /orders/14/receipt [36m302[0m 2.549 ms - 35[0m
+[0mGET /login [32m200[0m 7.936 ms - 796[0m
+[0mGET /login [36m304[0m 1.542 ms - -[0m
+[0mPOST /login [36m302[0m 0.644 ms - 30[0m
+[0mGET / [32m200[0m 81.680 ms - 10364[0m
+[0mPROPFIND / [33m404[0m 0.750 ms - 144[0m
+[0mGET / [36m302[0m 0.276 ms - 35[0m
+[0mGET /login [32m200[0m 0.873 ms - 796[0m
+[0mGET /favicon.ico [33m404[0m 0.254 ms - 150[0m
+[0mGET /favicon.ico [33m404[0m 0.207 ms - 150[0m
+[0mPOST /login [36m302[0m 0.248 ms - 30[0m
+[0mGET / [32m200[0m 2.337 ms - 10364[0m
+SyntaxError: Unexpected identifier '$' in /home/ubuntu/.openclaw/workspace/laundry-zero/views/receipt.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+    at new Function (<anonymous>)
+    at Template.compile (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:673:12)
+    at Object.compile (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:398:16)
+    at handleCache (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:235:18)
+    at tryHandleCache (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:274:16)
+    at exports.renderFile [as engine] (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:491:10)
+    at View.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/view.js:135:8)
+    at tryRender (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/application.js:657:10)
+    at app.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/application.js:609:3)
+    at ServerResponse.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/response.js:1049:7)
+[0mGET /orders/17/receipt [31m500[0m 1.653 ms - 1614[0m
+[0mGET /orders [32m200[0m 1.996 ms - 17337[0m
+SyntaxError: Unexpected identifier '$' in /home/ubuntu/.openclaw/workspace/laundry-zero/views/receipt.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+    at new Function (<anonymous>)
+    at Template.compile (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:673:12)
+    at Object.compile (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:398:16)
+    at handleCache (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:235:18)
+    at tryHandleCache (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:274:16)
+    at exports.renderFile [as engine] (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:491:10)
+    at View.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/view.js:135:8)
+    at tryRender (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/application.js:657:10)
+    at app.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/application.js:609:3)
+    at ServerResponse.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/response.js:1049:7)
+[0mGET /orders/17/receipt [31m500[0m 1.021 ms - 1614[0m
+[0mGET /orders/17 [32m200[0m 1.707 ms - 2636[0m
+SyntaxError: Unexpected identifier '$' in /home/ubuntu/.openclaw/workspace/laundry-zero/views/receipt.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+    at new Function (<anonymous>)
+    at Template.compile (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:673:12)
+    at Object.compile (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:398:16)
+    at handleCache (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:235:18)
+    at tryHandleCache (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:274:16)
+    at exports.renderFile [as engine] (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:491:10)
+    at View.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/view.js:135:8)
+    at tryRender (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/application.js:657:10)
+    at app.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/application.js:609:3)
+    at ServerResponse.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/response.js:1049:7)
+[0mGET /orders/17/receipt [31m500[0m 1.202 ms - 1614[0m
+[0mGET /orders/14/receipt [36m302[0m 0.282 ms - 35[0m
+[0mGET /login [32m200[0m 2.139 ms - 796[0m
+[0mGET /orders/14/receipt [36m302[0m 0.311 ms - 35[0m
+[0mGET /login [36m304[0m 1.370 ms - -[0m
+[0mGET /orders/14/receipt [36m302[0m 0.298 ms - 35[0m
+[0mGET /login [36m304[0m 0.731 ms - -[0m
+SyntaxError: Unexpected identifier '$' in /home/ubuntu/.openclaw/workspace/laundry-zero/views/receipt.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+    at new Function (<anonymous>)
+    at Template.compile (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:673:12)
+    at Object.compile (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:398:16)
+    at handleCache (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:235:18)
+    at tryHandleCache (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:274:16)
+    at exports.renderFile [as engine] (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/ejs/lib/ejs.js:491:10)
+    at View.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/view.js:135:8)
+    at tryRender (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/application.js:657:10)
+    at app.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/application.js:609:3)
+    at ServerResponse.render (/home/ubuntu/.openclaw/workspace/laundry-zero/node_modules/express/lib/response.js:1049:7)
+[0mGET /orders/17/receipt [31m500[0m 1.113 ms - 1614[0m
+[0mGET / [36m302[0m 0.194 ms - 35[0m
+[0mGET /login [32m200[0m 0.685 ms - 796[0m
+[0mGET / [36m302[0m 0.286 ms - 28[0m
+[0mGET /login [32m200[0m 0.690 ms - 796[0m
+[0mGET / [36m302[0m 0.237 ms - 28[0m
+[0mGET /login [32m200[0m 0.706 ms - 796[0m
+[0mGET /robots.txt [33m404[0m 0.219 ms - 149[0m
+[0mGET / [36m302[0m 0.170 ms - 28[0m
+[0mGET /robots.txt [33m404[0m 0.264 ms - 149[0m
+[0mGET / [36m302[0m 0.156 ms - 28[0m
+[0mGET /login [32m200[0m 0.674 ms - 796[0m
+[0mGET /recordings/index.php [33m404[0m 0.214 ms - 159[0m
+[0mGET /admin/modules/framework/amp_conf/htdocs/admin/config.php [33m404[0m 0.442 ms - 195[0m
+[0mPOST / [33m404[0m 0.221 ms - 140[0m
+[0mPROPFIND / [33m404[0m 0.194 ms - 144[0m
+[0mGET / [36m302[0m 0.130 ms - 28[0m
+[0mGET /login [32m200[0m 0.704 ms - 796[0m
+[0mGET / [36m302[0m 0.215 ms - 28[0m
+[0mGET /login [32m200[0m 0.691 ms - 796[0m
+[0mGET / [36m302[0m 0.137 ms - 28[0m
+[0mGET /admin/config.php [33m404[0m 0.255 ms - 155[0m
+[0mPROPFIND / [33m404[0m 0.191 ms - 144[0m
+[0mGET /.env [33m404[0m 0.187 ms - 143[0m
+[0mGET /SDK/webLanguage [33m404[0m 0.154 ms - 154[0m
+[0mGET / [36m302[0m 0.147 ms - 28[0m
+[0mGET /login [32m200[0m 0.668 ms - 796[0m
+[0mGET /favicon.ico [33m404[0m 0.225 ms - 150[0m
+[0mGET /.well-known/security.txt [33m404[0m 0.222 ms - 163[0m
+[0mGET /favicon.ico [33m404[0m 0.160 ms - 150[0m
+[0mGET /_profiler/phpinfo [33m404[0m 0.196 ms - 156[0m
+[0mGET / [36m302[0m 0.145 ms - 28[0m
+[0mGET /login [32m200[0m 0.675 ms - 796[0m
+[0mHEAD / [36m302[0m 0.153 ms - 28[0m
+[0mHEAD /login [32m200[0m 0.870 ms - 796[0m
+[0mGET / [36m302[0m 0.179 ms - 35[0m
+[0mGET /login [32m200[0m 0.662 ms - 796[0m
+[0mGET / [36m302[0m 0.151 ms - 28[0m
+[0mGET /login [32m200[0m 0.695 ms - 796[0m
+[0mPROPFIND / [33m404[0m 0.161 ms - 144[0m
+[0mPOST /hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp://input [33m404[0m 0.519 ms - 151[0m
+[0mPOST /?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp://input [33m404[0m 0.114 ms - 140[0m
+[0mGET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.171 ms - 189[0m
+[0mGET /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.171 ms - 185[0m
+[0mGET /vendor/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.292 ms - 181[0m
+[0mGET /vendor/phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.668 ms - 177[0m
+[0mGET /vendor/phpunit/phpunit/LICENSE/eval-stdin.php [33m404[0m 0.170 ms - 184[0m
+[0mGET /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.171 ms - 196[0m
+[0mGET /phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.282 ms - 182[0m
+[0mGET /phpunit/phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.238 ms - 178[0m
+[0mGET /phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.151 ms - 174[0m
+[0mGET /phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.155 ms - 170[0m
+[0mGET /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.155 ms - 186[0m
+[0mGET /lib/phpunit/phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.224 ms - 182[0m
+[0mGET /lib/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.157 ms - 178[0m
+[0mGET /lib/phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.212 ms - 174[0m
+[0mGET /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.187 ms - 193[0m
+[0mGET /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.134 ms - 197[0m
+[0mGET /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.141 ms - 193[0m
+[0mGET /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.157 ms - 192[0m
+[0mGET /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.144 ms - 193[0m
+[0mGET /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.235 ms - 194[0m
+[0mGET /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.185 ms - 195[0m
+[0mGET /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.151 ms - 192[0m
+[0mGET /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.149 ms - 195[0m
+[0mGET /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.166 ms - 194[0m
+[0mGET /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.188 ms - 197[0m
+[0mGET /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.149 ms - 193[0m
+[0mGET /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.148 ms - 194[0m
+[0mGET /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.164 ms - 193[0m
+[0mGET /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.147 ms - 193[0m
+[0mGET /admin/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.152 ms - 195[0m
+[0mGET /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.147 ms - 196[0m
+[0mGET /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.237 ms - 194[0m
+[0mGET /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.138 ms - 206[0m
+[0mGET /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.223 ms - 195[0m
+[0mGET /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.142 ms - 196[0m
+[0mGET /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.144 ms - 194[0m
+[0mGET /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.143 ms - 193[0m
+[0mGET /index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello [33m404[0m 0.127 ms - 148[0m
+[0mGET /public/index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello [33m404[0m 0.143 ms - 155[0m
+[0mGET /index.php?lang=../../../../../../../../usr/local/lib/php/pearcmd&+config-create+/&/<?echo(md5("hi"));?>+/tmp/index1.php [33m404[0m 0.134 ms - 148[0m
+[0mGET /index.php?lang=../../../../../../../../tmp/index1 [33m404[0m 0.166 ms - 148[0m
+[0mGET /containers/json [33m404[0m 0.135 ms - 154[0m
+[0mGET / [36m302[0m 0.115 ms - 28[0m
+[0mPROPFIND / [33m404[0m 0.281 ms - 144[0m
+[0mGET /robots.txt [33m404[0m 0.146 ms - 149[0m
+[0mGET /recordings/index.php [33m404[0m 0.134 ms - 159[0m
+[0mGET /admin/modules/framework/amp_conf/htdocs/admin/config.php [33m404[0m 0.134 ms - 195[0m
+[0mGET / [36m302[0m 0.225 ms - 28[0m
+[0mGET /login [32m200[0m 0.895 ms - 796[0m
+[0mGET /admin/config.php [33m404[0m 0.156 ms - 155[0m
+[0mGET / [36m302[0m 0.135 ms - 28[0m
+[0mPROPFIND / [33m404[0m 0.179 ms - 144[0m
+[0mGET / [36m302[0m 0.133 ms - 28[0m
+[0mGET /login [32m200[0m 0.696 ms - 796[0m
+[0mGET / [36m302[0m 0.174 ms - 28[0m
+[0mGET /login [32m200[0m 0.646 ms - 796[0m
+[0mPROPFIND / [33m404[0m 0.151 ms - 144[0m
+[0mGET / [36m302[0m 0.152 ms - 28[0m
+[0mGET /login [32m200[0m 0.668 ms - 796[0m
+[0mGET /favicon.ico [33m404[0m 0.179 ms - 150[0m
+[0mGET /.well-known/security.txt [33m404[0m 0.131 ms - 163[0m
+[0mGET / [36m302[0m 0.104 ms - 28[0m
+[0mGET /login [32m200[0m 0.841 ms - 796[0m
+[0mGET / [36m302[0m 0.135 ms - 28[0m
+[0mGET /robots.txt [33m404[0m 0.132 ms - 149[0m
+[0mGET / [36m302[0m 0.201 ms - 28[0m
+[0mGET /login [32m200[0m 0.771 ms - 796[0m
+[0mGET / [36m302[0m 0.131 ms - 28[0m
+[0mGET /favicon.ico [33m404[0m 0.149 ms - 150[0m
+[0mGET /login [32m200[0m 0.668 ms - 796[0m
+[0mGET /favicon.ico [33m404[0m 0.138 ms - 150[0m
+[0mGET /security.txt [33m404[0m 0.147 ms - 151[0m
+[0mGET /sitemap.xml [33m404[0m 0.223 ms - 150[0m
+[0mGET /.env [33m404[0m 0.149 ms - 143[0m
+[0mGET /recordings/index.php [33m404[0m 0.133 ms - 159[0m
+[0mGET / [36m302[0m 0.135 ms - 28[0m
+[0mPROPFIND / [33m404[0m 0.159 ms - 144[0m
+[0mGET /webui/ [33m404[0m 0.153 ms - 145[0m
+[0mGET / [36m302[0m 0.129 ms - 28[0m
+[0mGET /admin/modules/framework/amp_conf/htdocs/admin/config.php [33m404[0m 0.164 ms - 195[0m
+[0mGET /login [32m200[0m 0.957 ms - 796[0m
+[0mGET /favicon.ico [33m404[0m 0.194 ms - 150[0m
+[0mGET /vpn/index.html [33m404[0m 0.141 ms - 153[0m
+[0mGET /vpn/index.html [33m404[0m 0.143 ms - 153[0m
+[0mGET /logon/LogonPoint/index.html [33m404[0m 0.143 ms - 166[0m
+[0mGET /geoserver/web/ [33m404[0m 0.155 ms - 153[0m
+[0mGET /admin/config.php [33m404[0m 0.131 ms - 155[0m
+[0mGET /developmentserver/metadatauploader [33m404[0m 0.146 ms - 173[0m
+[0mGET /.continue/dev_data.json [33m404[0m 0.493 ms - 162[0m
+[0mPROPFIND / [33m404[0m 0.983 ms - 144[0m
+[0mGET /robots.txt [33m404[0m 0.149 ms - 149[0m
+[0mGET /recordings/index.php [33m404[0m 0.208 ms - 159[0m
+[0mGET /admin/modules/framework/amp_conf/htdocs/admin/config.php [33m404[0m 0.136 ms - 195[0m
+[0mGET / [36m302[0m 0.148 ms - 28[0m
+[0mGET /login [32m200[0m 3.087 ms - 796[0m
+[0mPROPFIND / [33m404[0m 0.152 ms - 144[0m
+[0mGET /SDK/webLanguage [33m404[0m 0.141 ms - 154[0m
+[0mPROPFIND / [33m404[0m 0.278 ms - 144[0m
+[0mGET / [36m302[0m 0.132 ms - 28[0m
+[0mGET /login [32m200[0m 0.688 ms - 796[0m
+[0mGET /admin/config.php [33m404[0m 0.196 ms - 155[0m
+[0mGET / [36m302[0m 0.129 ms - 28[0m
+[0mGET /cdn-cgi/trace [33m404[0m 0.123 ms - 152[0m
+[0mGET / [36m302[0m 0.133 ms - 28[0m
+[0mGET / [36m302[0m 2.537 ms - 28[0m
+[0mGET /login [32m200[0m 5.548 ms - 796[0m
+[0mPROPFIND / [33m404[0m 0.164 ms - 144[0m
+[0mGET /secrets/.env [33m404[0m 0.174 ms - 151[0m
+[0mGET /.env [33m404[0m 0.154 ms - 143[0m
+[0mGET /config/.env.production [33m404[0m 0.188 ms - 161[0m
+[0mGET /kubernetes/secrets.env [33m404[0m 0.127 ms - 161[0m
+[0mGET /.env.production [33m404[0m 0.152 ms - 154[0m
+[0mGET /.github/workflows/secrets.env [33m404[0m 0.129 ms - 168[0m
+[0mGET /docker/.env [33m404[0m 0.203 ms - 150[0m
+[0mGET /production/.env [33m404[0m 0.148 ms - 154[0m
+[0mGET /robots.txt [33m404[0m 0.133 ms - 149[0m
+[0mGET /autodiscover/autodiscover.json?@zdi/Powershell [33m404[0m 0.135 ms - 169[0m
+[0mGET /recordings/index.php [33m404[0m 0.152 ms - 159[0m
+[0mGET /admin/modules/framework/amp_conf/htdocs/admin/config.php [33m404[0m 0.128 ms - 195[0m
+[0mGET / [36m302[0m 0.188 ms - 28[0m
+[0mGET /login [32m200[0m 0.584 ms - 796[0m
+[0mGET /.moltbot/history.log [33m404[0m 0.135 ms - 159[0m
+[0mGET /admin/config.php [33m404[0m 0.136 ms - 155[0m
+[0mGET /owa/auth/logon.aspx [33m404[0m 0.135 ms - 158[0m
+[0mGET /Dr0v [33m404[0m 0.217 ms - 143[0m
+[0mPROPFIND / [33m404[0m 0.136 ms - 144[0m
+[0mPOST /hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp://input [33m404[0m 0.092 ms - 151[0m
+[0mPOST /?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp://input [33m404[0m 0.131 ms - 140[0m
+[0mGET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.131 ms - 189[0m
+[0mGET /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.142 ms - 185[0m
+[0mGET /vendor/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.133 ms - 181[0m
+[0mGET /vendor/phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.219 ms - 177[0m
+[0mGET /vendor/phpunit/phpunit/LICENSE/eval-stdin.php [33m404[0m 0.136 ms - 184[0m
+[0mGET /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.131 ms - 196[0m
+[0mGET /phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.144 ms - 182[0m
+[0mGET /phpunit/phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.146 ms - 178[0m
+[0mGET /phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.210 ms - 174[0m
+[0mGET /phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.137 ms - 170[0m
+[0mGET /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.152 ms - 186[0m
+[0mGET /lib/phpunit/phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.190 ms - 182[0m
+[0mGET /lib/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.137 ms - 178[0m
+[0mGET /lib/phpunit/Util/PHP/eval-stdin.php [33m404[0m 0.128 ms - 174[0m
+[0mGET /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.121 ms - 193[0m
+[0mGET /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.225 ms - 197[0m
+[0mGET /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.124 ms - 193[0m
+[0mGET /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.117 ms - 192[0m
+[0mGET /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.182 ms - 193[0m
+[0mGET /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.163 ms - 194[0m
+[0mGET /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.133 ms - 195[0m
+[0mGET /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.188 ms - 192[0m
+[0mGET /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.131 ms - 195[0m
+[0mGET /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.127 ms - 194[0m
+[0mGET /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.137 ms - 197[0m
+[0mGET /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.168 ms - 193[0m
+[0mGET /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.114 ms - 194[0m
+[0mGET /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.166 ms - 193[0m
+[0mGET /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php [33m404[0m 0.125 ms - 193[0m
+[0mGET /?XDEBUG_SESSION_START=phpstorm [36m302[0m 0.094 ms - 28[0m
+[0mGET /login [32m200[0m 0.808 ms - 796[0m
+[0mGET / [36m302[0m 0.128 ms - 28[0m
+[0mPOST / [33m404[0m 0.115 ms - 140[0m
+[0mGET /.env [33m404[0m 0.154 ms - 143[0m
+[0mGET /.env.local [33m404[0m 0.158 ms - 149[0m
+[0mGET /.env.production [33m404[0m 0.140 ms - 154[0m
+[0mGET /.env.staging [33m404[0m 0.163 ms - 151[0m
+[0mGET /.env.development [33m404[0m 0.157 ms - 155[0m
+[0mGET /.env.test [33m404[0m 0.147 ms - 148[0m
+[0mGET /.env.remote [33m404[0m 0.142 ms - 150[0m
+[0mGET /.env.bak [33m404[0m 0.145 ms - 147[0m
+[0mGET /.env.backup [33m404[0m 0.144 ms - 150[0m
+[0mGET /.env.save [33m404[0m 0.143 ms - 148[0m
+[0mGET /.env.old [33m404[0m 0.162 ms - 147[0m
+[0mGET /.env.sample [33m404[0m 0.150 ms - 150[0m
+[0mGET /.env.example [33m404[0m 0.161 ms - 151[0m
+[0mGET /.env.dev [33m404[0m 0.260 ms - 147[0m
+[0mGET /.env.prod [33m404[0m 0.157 ms - 148[0m
+[0mGET /.env.stage [33m404[0m 0.218 ms - 149[0m
+[0mGET /.env.ci [33m404[0m 0.190 ms - 146[0m
+[0mGET /.env.docker [33m404[0m 0.146 ms - 150[0m
+[0mGET /.env.live [33m404[0m 0.203 ms - 148[0m
+[0mGET /.env.preprod [33m404[0m 0.143 ms - 151[0m
+[0mGET /.env.uat [33m404[0m 0.147 ms - 147[0m
+[0mGET /.env.dist [33m404[0m 0.233 ms - 148[0m
+[0mGET /.env.swp [33m404[0m 0.149 ms - 147[0m
+[0mGET /.env~ [33m404[0m 0.148 ms - 144[0m
+[0mGET /app/.env [33m404[0m 0.141 ms - 147[0m
+[0mGET /apps/.env [33m404[0m 0.145 ms - 148[0m
+[0mGET /api/.env [33m404[0m 0.142 ms - 147[0m
+[0mGET /web/.env [33m404[0m 0.139 ms - 147[0m
+[0mGET /site/.env [33m404[0m 0.204 ms - 148[0m
+[0mGET /public/.env [33m404[0m 0.211 ms - 150[0m
+[0mGET /admin/.env [33m404[0m 0.182 ms - 149[0m
+[0mGET /backend/.env [33m404[0m 0.143 ms - 151[0m
+[0mGET /server/.env [33m404[0m 0.143 ms - 150[0m
+[0mGET /frontend/.env [33m404[0m 0.210 ms - 152[0m
+[0mGET /src/.env [33m404[0m 0.186 ms - 147[0m
+[0mGET /core/.env [33m404[0m 0.179 ms - 148[0m
+[0mGET /core/app/.env [33m404[0m 0.154 ms - 152[0m
+[0mGET /core/Database/.env [33m404[0m 0.144 ms - 157[0m
+[0mGET /config/.env [33m404[0m 0.141 ms - 150[0m
+[0mGET /private/.env [33m404[0m 0.163 ms - 151[0m
+[0mGET /current/.env [33m404[0m 0.160 ms - 151[0m
+[0mGET /release/.env [33m404[0m 0.148 ms - 151[0m
+[0mGET /releases/.env [33m404[0m 0.122 ms - 152[0m
+[0mGET /shared/.env [33m404[0m 0.229 ms - 150[0m
+[0mGET /deploy/.env [33m404[0m 0.140 ms - 150[0m
+[0mGET /build/.env [33m404[0m 0.144 ms - 149[0m
+[0mGET /dist/.env [33m404[0m 0.143 ms - 148[0m
+[0mGET /public_html/.env [33m404[0m 0.141 ms - 155[0m
+[0mGET /htdocs/.env [33m404[0m 0.136 ms - 150[0m
+[0mGET /www/.env [33m404[0m 0.140 ms - 147[0m
+[0mGET /html/.env [33m404[0m 0.161 ms - 148[0m
+[0mGET /live/.env [33m404[0m 0.136 ms - 148[0m
+[0mGET /prod/.env [33m404[0m 0.142 ms - 148[0m
+[0mGET /dev/.env [33m404[0m 0.141 ms - 147[0m
+[0mGET /staging/.env [33m404[0m 0.141 ms - 151[0m
+[0mGET /laravel/.env [33m404[0m 0.140 ms - 151[0m
+[0mGET /symfony/.env [33m404[0m 0.137 ms - 151[0m
+[0mGET /wordpress/.env [33m404[0m 0.197 ms - 153[0m
+[0mGET /wp/.env [33m404[0m 0.129 ms - 146[0m
+[0mGET /cms/.env [33m404[0m 0.137 ms - 147[0m
+[0mGET /drupal/.env [33m404[0m 0.139 ms - 150[0m
+[0mGET /joomla/.env [33m404[0m 0.136 ms - 150[0m
+[0mGET /magento/.env [33m404[0m 0.225 ms - 151[0m
+[0mGET /shopify/.env [33m404[0m 0.159 ms - 151[0m
+[0mGET /prestashop/.env [33m404[0m 0.160 ms - 154[0m
+[0mGET /v1/.env [33m404[0m 0.155 ms - 146[0m
+[0mGET /v2/.env [33m404[0m 0.217 ms - 146[0m
+[0mGET /v3/.env [33m404[0m 0.139 ms - 146[0m
+[0mGET /api/v1/.env [33m404[0m 0.263 ms - 150[0m
+[0mGET /api/v2/.env [33m404[0m 0.143 ms - 150[0m
+[0mGET /rest/.env [33m404[0m 0.146 ms - 148[0m
+[0mGET /graphql/.env [33m404[0m 0.141 ms - 151[0m
+[0mGET /gateway/.env [33m404[0m 0.149 ms - 151[0m
+[0mGET /microservice/.env [33m404[0m 0.144 ms - 156[0m
+[0mGET /service/.env [33m404[0m 0.141 ms - 151[0m
+[0mGET /vendor/.env [33m404[0m 0.138 ms - 150[0m
+[0mGET /lib/.env [33m404[0m 0.139 ms - 147[0m
+[0mGET /database/.env [33m404[0m 0.143 ms - 152[0m
+[0mGET /resources/.env [33m404[0m 0.140 ms - 153[0m
+[0mGET /storage/.env [33m404[0m 0.147 ms - 151[0m
+[0mGET /assets/.env [33m404[0m 0.143 ms - 150[0m
+[0mGET /uploads/.env [33m404[0m 0.143 ms - 151[0m
+[0mGET /internal/.env [33m404[0m 0.137 ms - 152[0m
+[0mGET /tools/.env [33m404[0m 0.132 ms - 149[0m
+[0mGET /scripts/.env [33m404[0m 0.147 ms - 151[0m
+[0mGET /portal/.env [33m404[0m 0.148 ms - 150[0m
+[0mGET /dashboard/.env [33m404[0m 0.136 ms - 153[0m
+[0mGET /panel/.env [33m404[0m 0.135 ms - 149[0m
+[0mGET /crm/.env [33m404[0m 0.136 ms - 147[0m
+[0mGET /erp/.env [33m404[0m 0.248 ms - 147[0m
+[0mGET /shop/.env [33m404[0m 0.138 ms - 148[0m
+[0mGET /store/.env [33m404[0m 0.150 ms - 149[0m
+[0mGET /saas/.env [33m404[0m 0.148 ms - 148[0m
+[0mGET /client/.env [33m404[0m 0.149 ms - 150[0m
+[0mGET /project/.env [33m404[0m 0.140 ms - 151[0m
+[0mGET /node/.env [33m404[0m 0.140 ms - 148[0m
+[0mGET /express/.env [33m404[0m 0.144 ms - 151[0m
+[0mGET /next/.env [33m404[0m 0.151 ms - 148[0m
+[0mGET /nuxt/.env [33m404[0m 0.138 ms - 148[0m
+[0mGET /nest/.env [33m404[0m 0.157 ms - 148[0m
+[0mGET /backup/.env [33m404[0m 0.135 ms - 150[0m
+[0mGET /backups/.env [33m404[0m 0.159 ms - 151[0m
+[0mGET /old/.env [33m404[0m 0.151 ms - 147[0m
+[0mGET /tmp/.env [33m404[0m 0.150 ms - 147[0m
+[0mGET /temp/.env [33m404[0m 0.185 ms - 148[0m
+[0mGET /lab/.env [33m404[0m 0.214 ms - 147[0m
+[0mGET /cronlab/.env [33m404[0m 0.137 ms - 151[0m
+[0mGET /cron/.env [33m404[0m 0.139 ms - 148[0m
+[0mGET /en/.env [33m404[0m 0.138 ms - 146[0m
+[0mGET /administrator/.env [33m404[0m 0.130 ms - 157[0m
+[0mGET /psnlink/.env [33m404[0m 0.137 ms - 151[0m
+[0mGET /exapi/.env [33m404[0m 0.209 ms - 149[0m
+[0mGET /sitemaps/.env [33m404[0m 0.134 ms - 152[0m
+[0mGET /mailer/.env [33m404[0m 0.133 ms - 150[0m
+[0mGET /mail/.env [33m404[0m 0.136 ms - 148[0m
+[0mGET /email/.env [33m404[0m 0.140 ms - 149[0m
+[0mGET /smtp/.env [33m404[0m 0.145 ms - 148[0m
+[0mGET /mailing/.env [33m404[0m 0.141 ms - 151[0m
+[0mGET /notifications/.env [33m404[0m 0.276 ms - 157[0m
+[0mGET /notify/.env [33m404[0m 0.139 ms - 150[0m
+[0mGET /sender/.env [33m404[0m 0.138 ms - 150[0m
+[0mGET /campaign/.env [33m404[0m 0.143 ms - 152[0m
+[0mGET /newsletter/.env [33m404[0m 0.157 ms - 154[0m
+[0mGET /ses/.env [33m404[0m 0.159 ms - 147[0m
+[0mGET /sendgrid/.env [33m404[0m 0.153 ms - 152[0m
+[0mGET /sparkpost/.env [33m404[0m 0.191 ms - 153[0m
+[0mGET /postmark/.env [33m404[0m 0.145 ms - 152[0m
+[0mGET /mailgun/.env [33m404[0m 0.158 ms - 151[0m
+[0mGET /mandrill/.env [33m404[0m 0.138 ms - 152[0m
+[0mGET /mailjet/.env [33m404[0m 0.134 ms - 151[0m
+[0mGET /brevo/.env [33m404[0m 0.154 ms - 149[0m
+[0mGET /transactional/.env [33m404[0m 0.151 ms - 157[0m
+[0mGET /bulk/.env [33m404[0m 0.145 ms - 148[0m
+[0mGET /phpinfo.php [33m404[0m 0.110 ms - 150[0m
+[0mGET /info.php [33m404[0m 0.125 ms - 147[0m
+[0mGET /php.php [33m404[0m 0.124 ms - 146[0m
+[0mGET /i.php [33m404[0m 0.127 ms - 144[0m
+[0mGET /pi.php [33m404[0m 0.131 ms - 145[0m
+[0mGET /pinfo.php [33m404[0m 0.111 ms - 148[0m
+[0mGET /test.php [33m404[0m 0.133 ms - 147[0m
+[0mGET /phpinfo [33m404[0m 0.116 ms - 146[0m
+[0mGET /p.php [33m404[0m 0.125 ms - 144[0m
+[0mGET /debug.php [33m404[0m 0.109 ms - 148[0m
+[0mGET /admin/phpinfo.php [33m404[0m 0.137 ms - 156[0m
+[0mGET /test/phpinfo.php [33m404[0m 0.122 ms - 155[0m
+[0mGET /dev/phpinfo.php [33m404[0m 0.150 ms - 154[0m
+[0mGET /old/phpinfo.php [33m404[0m 0.127 ms - 154[0m
+[0mGET /tmp/phpinfo.php [33m404[0m 0.119 ms - 154[0m
+[0mGET /public/phpinfo.php [33m404[0m 0.125 ms - 157[0m
+[0mGET /info [33m404[0m 0.128 ms - 143[0m
+[0mGET /php-info.php [33m404[0m 0.124 ms - 151[0m
+[0mGET /phpversion.php [33m404[0m 0.126 ms - 153[0m
+[0mGET /_phpinfo.php [33m404[0m 0.137 ms - 151[0m
+[0mGET /old_phpinfo.php [33m404[0m 0.144 ms - 154[0m
+[0mGET /server-info.php [33m404[0m 0.147 ms - 154[0m
+[0mGET /server-status.php [33m404[0m 0.122 ms - 156[0m
+[0mGET /_profiler/phpinfo [33m404[0m 0.118 ms - 156[0m
+[0mGET /_environment [33m404[0m 0.109 ms - 151[0m
+[0mGET /webroot/index.php/_environment [33m404[0m 0.145 ms - 169[0m
+[0mGET /mail/phpinfo.php [33m404[0m 0.129 ms - 155[0m
+[0mGET /cpanel/phpinfo.php [33m404[0m 0.125 ms - 157[0m
+[0mGET /hosting/phpinfo.php [33m404[0m 0.124 ms - 158[0m
+[0mGET /webmail/phpinfo.php [33m404[0m 0.148 ms - 158[0m
+[0mGET /smtp/phpinfo.php [33m404[0m 0.114 ms - 155[0m
+[0mGET /.git/config [33m404[0m 0.137 ms - 150[0m
+[0mPOST /login [33m401[0m 13.539 ms - 840[0m
+[0mPOST /login [33m401[0m 0.685 ms - 840[0m
+[0mPOST /login [33m401[0m 0.789 ms - 840[0m
+[0mPROPFIND / [33m404[0m 0.295 ms - 144[0m
+[0mGET / [36m302[0m 0.185 ms - 28[0m
+[0mGET / [36m302[0m 0.132 ms - 28[0m
+[0mGET /login [32m200[0m 4.716 ms - 796[0m
+[0mGET /favicon.ico [33m404[0m 0.198 ms - 150[0m
+[0mGET /robots.txt [33m404[0m 0.150 ms - 149[0m
+[0mGET /recordings/index.php [33m404[0m 0.143 ms - 159[0m
+[0mGET /admin/modules/framework/amp_conf/htdocs/admin/config.php [33m404[0m 0.156 ms - 195[0m
+[0mGET / [36m302[0m 0.144 ms - 28[0m
+[0mGET /login [32m200[0m 0.937 ms - 796[0m
+[0mGET /favicon.ico [33m404[0m 0.146 ms - 150[0m
+[0mGET / [36m302[0m 0.151 ms - 28[0m
+[0mGET /login [32m200[0m 0.728 ms - 796[0m
+[0mGET /favicon.ico [33m404[0m 0.139 ms - 150[0m
+[0mGET /er1vhku0sc4epy7 [33m404[0m 0.140 ms - 154[0m
+[0mGET /security.txt [33m404[0m 0.233 ms - 151[0m
+[0mGET / [36m302[0m 0.096 ms - 28[0m
+[0mGET /login [32m200[0m 0.721 ms - 796[0m
+[0mPROPFIND / [33m404[0m 0.174 ms - 144[0m
+[0mGET /actuator/gateway/routes [33m404[0m 0.253 ms - 162[0m
+[0mGET / [36m302[0m 0.131 ms - 28[0m
+[0mGET / [36m302[0m 0.131 ms - 28[0m
+[0mGET /login [32m200[0m 0.689 ms - 796[0m
+[0mGET / [36m302[0m 0.147 ms - 28[0m
+[0mGET /.env.local [33m404[0m 0.177 ms - 149[0m
+[0mGET /project/.git/config [33m404[0m 0.143 ms - 158[0m
+[0mGET /src/.git/config [33m404[0m 0.164 ms - 154[0m
+[0mGET /.env.dev [33m404[0m 0.156 ms - 147[0m
+[0mGET /api/.env [33m404[0m 0.196 ms - 147[0m
+[0mGET /.env [33m404[0m 0.160 ms - 143[0m
+[0mGET /.env.config [33m404[0m 0.161 ms - 150[0m
+[0mGET /cms/.git/config [33m404[0m 0.186 ms - 154[0m
+[0mGET /media../.git/config [33m404[0m 0.200 ms - 158[0m
+[0mGET /.env.staging.local [33m404[0m 0.225 ms - 157[0m
+[0mGET /.env.testing [33m404[0m 0.166 ms - 151[0m
+[0mGET /.aws/credentials [33m404[0m 0.147 ms - 155[0m
+[0mGET /.env.bak [33m404[0m 0.162 ms - 147[0m
+[0mGET /.env.production.local [33m404[0m 0.170 ms - 160[0m
+[0mGET /.env.secret [33m404[0m 0.160 ms - 150[0m
+[0mGET /assets../.git/config [33m404[0m 0.149 ms - 159[0m
+[0mGET /api/.git/config [33m404[0m 0.135 ms - 154[0m
+[0mGET /.env.template [33m404[0m 0.177 ms - 152[0m
+[0mGET /.env.backup [33m404[0m 0.167 ms - 150[0m
+[0mGET /.env.ci [33m404[0m 0.172 ms - 146[0m
+[0mGET /.env.development.local [33m404[0m 0.162 ms - 161[0m
+[0mGET /admin/.git/config [33m404[0m 0.137 ms - 156[0m
+[0mGET /docker-compose.prod.yml [33m404[0m 0.179 ms - 162[0m
+[0mGET /.env.preprod [33m404[0m 0.175 ms - 151[0m
+[0mGET /.env.production [33m404[0m 0.203 ms - 154[0m
+[0mGET /.env_sample [33m404[0m 0.413 ms - 150[0m
+[0mGET /.env.sandbox [33m404[0m 0.157 ms - 151[0m
+[0mGET /backup/.git/config [33m404[0m 0.126 ms - 157[0m
+[0mGET /public/.git/config [33m404[0m 0.136 ms - 157[0m
+[0mGET /.env.qa [33m404[0m 0.159 ms - 146[0m
+[0mGET /.envrc [33m404[0m 0.161 ms - 145[0m
+[0mGET /.env.save [33m404[0m 0.170 ms - 148[0m
+[0mGET /.env.stage [33m404[0m 0.166 ms - 149[0m
+[0mGET /.env.uat [33m404[0m 0.166 ms - 147[0m
+[0mGET /.git/config [33m404[0m 0.143 ms - 150[0m
+[0mGET /files/.git/config [33m404[0m 0.135 ms - 156[0m
+[0mGET /.env.dev.local [33m404[0m 0.171 ms - 153[0m
+[0mGET /.env.dist [33m404[0m 0.198 ms - 148[0m
+[0mGET /build/.env [33m404[0m 0.199 ms - 149[0m
+[0mGET /core/.git/config [33m404[0m 0.190 ms - 155[0m
+[0mGET /server/.git/config [33m404[0m 0.146 ms - 157[0m
+[0mGET /dev/.git/config [33m404[0m 0.137 ms - 154[0m
+[0mGET /.env.prod [33m404[0m 0.179 ms - 148[0m
+[0mGET /prod/.env [33m404[0m 0.163 ms - 148[0m
+[0mGET /.env.live [33m404[0m 0.157 ms - 148[0m
+[0mGET /.env.prod.local [33m404[0m 0.162 ms - 154[0m
+[0mGET /.env.test [33m404[0m 0.159 ms - 148[0m
+[0mGET /config/.env [33m404[0m 0.153 ms - 150[0m
+[0mGET /configuration/.env [33m404[0m 0.163 ms - 157[0m
+[0mGET /static../.git/config [33m404[0m 0.144 ms - 159[0m
+[0mGET /app/.git/config [33m404[0m 0.142 ms - 154[0m
+[0mGET /media/.git/config [33m404[0m 0.143 ms - 156[0m
+[0mGET /.env.testing.local [33m404[0m 0.152 ms - 157[0m
+[0mGET /config/.git/config [33m404[0m 0.138 ms - 157[0m
+[0mGET /config.json [33m404[0m 0.139 ms - 150[0m
+[0mGET /.env.default [33m404[0m 0.164 ms - 151[0m
+[0mGET /data/.git/config [33m404[0m 0.135 ms - 155[0m
+[0mGET /www/.git/config [33m404[0m 0.145 ms - 154[0m
+[0mGET /.env [33m404[0m 0.176 ms - 143[0m
+[0mGET /api/.env [33m404[0m 0.159 ms - 147[0m
+[0mGET /backend/.env [33m404[0m 0.155 ms - 151[0m
+[0mGET /admin/.env [33m404[0m 0.163 ms - 149[0m
+[0mGET /.env.example [33m404[0m 0.158 ms - 151[0m
+[0mGET /app_dev.php/_profiler/phpinfo [33m404[0m 0.165 ms - 168[0m
+[0mGET /?phpinfo=-1 [36m302[0m 0.133 ms - 28[0m
+[0mGET /app_dev.php/_profiler/open?file=app/config/parameters.yml [33m404[0m 0.133 ms - 165[0m
+[0mGET /phpinfo.php [33m404[0m 0.136 ms - 150[0m
+[0mGET /?url=.env [36m302[0m 0.124 ms - 28[0m
+[0mGET /staging/.env [33m404[0m 0.161 ms - 151[0m
+[0mGET /info/ [33m404[0m 0.158 ms - 144[0m
+[0mGET /app/.env [33m404[0m 0.158 ms - 147[0m
+[0mGET /phpinfo/ [33m404[0m 0.127 ms - 147[0m
+[0mGET /.env.production [33m404[0m 0.210 ms - 154[0m
+[0mGET /dev/.env [33m404[0m 0.167 ms - 147[0m
+[0mGET /.env.save [33m404[0m 0.159 ms - 148[0m
+[0mGET /demo/.env [33m404[0m 0.170 ms - 148[0m
+[0mGET /server/.env [33m404[0m 0.160 ms - 150[0m
+[0mGET /core/.env [33m404[0m 0.148 ms - 148[0m
+[0mGET /laravel/.env [33m404[0m 0.141 ms - 151[0m
+[0mGET /info [33m404[0m 0.128 ms - 143[0m
+[0mGET /.config.yaml [33m404[0m 0.231 ms - 151[0m
+[0mGET /test/.env [33m404[0m 0.223 ms - 148[0m
+[0mGET /web/.env [33m404[0m 0.175 ms - 147[0m
+[0mGET /secrets.env [33m404[0m 0.177 ms - 150[0m
+[0mGET /test [33m404[0m 0.145 ms - 143[0m
+[0mGET /crm/.env [33m404[0m 0.221 ms - 147[0m
+[0mGET /.env.bak [33m404[0m 0.158 ms - 147[0m
+[0mGET /.env.local [33m404[0m 0.174 ms - 149[0m
+[0mGET /.env.save.1 [33m404[0m 0.293 ms - 150[0m
+[0mGET /config/.env [33m404[0m 0.170 ms - 150[0m
+[0mGET /docs/.env [33m404[0m 0.162 ms - 148[0m
+[0mGET /debug/default/view?panel=config [33m404[0m 0.191 ms - 157[0m
